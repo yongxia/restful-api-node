@@ -14,6 +14,7 @@ mongoose.connect('mongodb://root:' + process.env.MONGO_ALLAS_PW +
 mongoose.Promise = global.Promise;
 
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
